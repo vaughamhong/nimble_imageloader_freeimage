@@ -19,6 +19,7 @@ namespace nimble{
         class IResource;
     };
 	namespace image{
+        class IImage;
         
         //! Image file resource loader
         class FreeImageImageLoader
@@ -30,9 +31,13 @@ namespace nimble{
             //! Destructor
             virtual ~FreeImageImageLoader();
             
+            //! loads an image
+            //! \param path the path of the file we want to load
+            virtual image::IImage* loadImage(const char *path);
+            
             //! loads a resource
             //! \param path the path of the file we want to load
-            virtual resource::IResource* load(const char* path);
+            virtual resource::IResource* loadResource(const char* path);
         };
 	};
 };
